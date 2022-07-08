@@ -24,6 +24,14 @@ jobs:
           cache: maven
       - name: Build with Maven Wrapper
         run: ./mvnw -B package
-  Linter:
+  Lint:
+  
+    runs-on: ubuntu-latest
+
+    steps:
        - name: Super-Linter
          uses: github/super-linter@v4.9.4
+         env:
+         # VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
