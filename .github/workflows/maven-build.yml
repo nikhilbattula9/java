@@ -24,3 +24,6 @@ jobs:
           cache: maven
       - name: Build with Maven Wrapper
         run: ./mvnw -B package
+  Linter:
+       - name: Super-Linter
+         uses: github/super-linter@v4.9.4
